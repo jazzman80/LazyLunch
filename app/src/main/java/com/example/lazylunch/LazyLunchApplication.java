@@ -11,5 +11,6 @@ public class LazyLunchApplication extends Application {
         super.onCreate();
         remoteDataSource = new RemoteDataSource();
         repository = new Repository(remoteDataSource);
+        repository.loadNextRecipe();
     }
 }

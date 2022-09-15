@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private void updateUI(){
         currentRecipe = repository.getCurrentRecipe();
         recipeNameTextView.setText(currentRecipe.name);
-        new DownloadImage(recipeImageView).execute(currentRecipe.imageAddress);
+        //new DownloadImage(recipeImageView).execute(currentRecipe.imageAddress);
+        recipeImageView.setImageBitmap(currentRecipe.image);
     }
 
 

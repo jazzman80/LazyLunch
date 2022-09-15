@@ -6,7 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".FullRecipeActivity">
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:button="@drawable/checkbox_selector"
+        android:onClick="onFavoriteChecked"
+        android:translationZ="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,9 +35,10 @@
                 android:id="@+id/recipeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="55dp"
+                android:fontFamily="@font/manrope"
                 android:text="@string/recipe_name"
                 android:textAlignment="center"
                 android:textColor="@android:color/secondary_text_light"
@@ -35,20 +49,21 @@
             <ImageView
                 android:id="@+id/fullRecipeImageView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:maxHeight="200dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:maxHeight="20dp"
+                tools:srcCompat="@drawable/wssvvs1511785879" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/manrope"
                 android:text="@string/instructions"
                 android:textAlignment="center"
                 android:textSize="22sp" />
@@ -60,8 +75,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/manrope"
                 android:text="@string/lorem"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
         </LinearLayout>
     </ScrollView>

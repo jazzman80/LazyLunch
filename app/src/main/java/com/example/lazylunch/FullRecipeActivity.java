@@ -3,6 +3,8 @@ package com.example.lazylunch;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +16,7 @@ public class FullRecipeActivity extends AppCompatActivity {
     TextView recipeName;
     TextView recipeDescription;
     ImageView recipeImageView;
+    CheckBox favoriteCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +29,18 @@ public class FullRecipeActivity extends AppCompatActivity {
         recipeName = findViewById(R.id.recipeName);
         recipeDescription = findViewById(R.id.recipeText);
         recipeImageView = findViewById(R.id.fullRecipeImageView);
+        favoriteCheckBox = findViewById(R.id.checkBox);
         currentRecipe = repository.getCurrentRecipe();
 
         recipeName.setText(currentRecipe.name);
         recipeDescription.setText(currentRecipe.description);
-        new DownloadImage(recipeImageView).execute(currentRecipe.imageAddress);
+        //new DownloadImage(recipeImageView).execute(currentRecipe.imageAddress);
+        recipeImageView.setImageBitmap(currentRecipe.image);
+
+    }
+
+    public void onFavoriteChecked(View view){
+        if (currentRecipe.isFavorite) repository.removeFromFavorites();
+        else repository.addToFavorites();
     }
 }

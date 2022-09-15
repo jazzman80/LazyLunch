@@ -13,6 +13,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="70dp"
+        android:fontFamily="@font/manrope_medium"
         android:onClick="onThisRecipeButtonClick"
         android:text="@string/this_button_text"
         android:textSize="12sp"
@@ -28,6 +29,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="70dp"
+        android:fontFamily="@font/manrope_medium"
         android:onClick="onNextRecipeButtonClick"
         android:text="@string/next_button_text"
         android:textSize="12sp"
@@ -52,7 +54,7 @@
             android:id="@+id/recipeImageView"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@drawable/wssvvs1511785879" />
 
     </androidx.cardview.widget.CardView>
 
@@ -61,8 +63,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
+        android:fontFamily="@font/manrope"
         android:text="@string/recipe_name"
         android:textAlignment="center"
         android:textSize="28sp"
