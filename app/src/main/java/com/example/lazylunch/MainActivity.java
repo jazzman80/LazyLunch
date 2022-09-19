@@ -1,14 +1,12 @@
 package com.example.lazylunch;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Application;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
 
@@ -31,20 +29,30 @@ public class MainActivity extends AppCompatActivity {
         updateUI();
     }
 
-    private void updateUI(){
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateUI();
+    }
+
+    private void updateUI() {
         currentRecipe = repository.getCurrentRecipe();
         recipeNameTextView.setText(currentRecipe.name);
-        //new DownloadImage(recipeImageView).execute(currentRecipe.imageAddress);
         recipeImageView.setImageBitmap(currentRecipe.image);
     }
 
+    public void onFavoritesButtonClick(View view) {
+        Intent intent = new Intent(this, FavoritesActivity.class);
+        startActivity(intent);
+    }
 
-    public void onThisRecipeButtonClick(View view){
+
+    public void onThisRecipeButtonClick(View view) {
         Intent intent = new Intent(this, FullRecipeActivity.class);
         startActivity(intent);
     }
 
-    public void onNextRecipeButtonClick(View view){
+    public void onNextRecipeButtonClick(View view) {
         repository.loadNextRecipe();
         updateUI();
     }

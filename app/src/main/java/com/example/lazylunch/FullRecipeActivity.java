@@ -32,15 +32,22 @@ public class FullRecipeActivity extends AppCompatActivity {
         favoriteCheckBox = findViewById(R.id.checkBox);
         currentRecipe = repository.getCurrentRecipe();
 
+        favoriteCheckBox.setChecked(repository.isCurrentFavorite());
+
         recipeName.setText(currentRecipe.name);
         recipeDescription.setText(currentRecipe.description);
-        //new DownloadImage(recipeImageView).execute(currentRecipe.imageAddress);
         recipeImageView.setImageBitmap(currentRecipe.image);
 
     }
 
-    public void onFavoriteChecked(View view){
-        if (currentRecipe.isFavorite) repository.removeFromFavorites();
+    @Override
+    protected void onPause() {
+        super.onPause();
+        repository.saveFavorites();
+    }
+
+    public void onFavoriteChecked(View view) {
+        if (repository.isCurrentFavorite()) repository.removeFromFavorites();
         else repository.addToFavorites();
     }
 }

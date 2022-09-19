@@ -1,14 +1,12 @@
 package com.example.lazylunch;
 
-import android.util.Log;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class Networking extends Thread{
+public class Networking extends Thread {
     StringBuilder content;
 
     @Override

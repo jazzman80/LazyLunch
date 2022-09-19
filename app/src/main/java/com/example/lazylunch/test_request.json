@@ -1,0 +1,19 @@
+{
+  "meals": [
+    {
+      "strMeal": "Moussaka",
+      "strInstructions": "Moussaka",
+      "strMealThumb": "https:\/\/www.themealdb.com\/images\/media\/meals\/ctg8jd1585563097.jpg"
+    },
+    {
+      "strMeal": "Teriyaki Chicken Casserole",
+      "strInstructions": "Teriyaki Chicken Casserole",
+      "strMealThumb": "https:\/\/www.themealdb.com\/images\/media\/meals\/wvpsxx1468256321.jpg"
+    },
+    {
+      "strMeal": "Vegetable Shepherd's Pie",
+      "strInstructions": "Vegetable Shepherd's Pie",
+      "strMealThumb": "https:\/\/www.themealdb.com\/images\/media\/meals\/w8umt11583268117.jpg"
+    }
+  ]
+}
